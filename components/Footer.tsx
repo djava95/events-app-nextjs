@@ -8,7 +8,7 @@ const FooterWrapper = styled.footer`
 	display: flex;
   flex-shrink: 0;
 	justify-content: center;
-  background-color: black;
+  background-color: #783030;
 `;
 
 const FooterContainer = styled(Container)`
@@ -27,7 +27,6 @@ const FooterLinksContainer = styled.ul`
 `
 const FooterLink = styled.li`
   line-height: 28px;
-  color: #7d7d7d;
 `
 const Footer = () => {
   const footerLinks = navLinks.filter(item => item.footer)

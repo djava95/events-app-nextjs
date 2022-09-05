@@ -1,11 +1,11 @@
-import { PageMainContainer, PageHeader } from "../../customElemets/customStyledElements";
+import { PageMainContainer, PageHeading } from "../../customElemets/customStyledElements";
 import styled from "styled-components";
 
 const AddEvent = () => {
 
   return (
     <PageMainContainer>
-      <PageHeader>Add event</PageHeader>
+      <PageHeading>Add event</PageHeading>
     </PageMainContainer>
   )
 }

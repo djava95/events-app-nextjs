@@ -1,5 +1,5 @@
 import { useRouter } from "next/router"
-import { PageMainContainer, PageHeader } from "../../customElemets/customStyledElements"
+import { PageMainContainer, PageHeading } from "../../customElemets/customStyledElements"
 import styled from "styled-components"
 
 const Paragraph = styled.div`
@@ -13,9 +13,9 @@ const EventPage = () => {
   
   return (
     <PageMainContainer>
-      <PageHeader>
+      <PageHeading>
         Event
-      </PageHeader>
+      </PageHeading>
       <Paragraph>{router.query.id}</Paragraph>
     </PageMainContainer>
   )

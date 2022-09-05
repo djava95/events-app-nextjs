@@ -1,0 +1,34 @@
+{
+  "events" : [
+    {
+      "id" : "10000001",
+      "type" : "concert",
+      "genre" : "progressive house",
+      "name" : "Axwell and Ingrosso world tour",
+      "artists" : "Axwell and Ingrosso",
+      "location" : "Paris",
+      "date" : "2022-10-5",
+      "imageURL" : "https://i.im.ge/2022/09/02/O3kGPJ.axwellingrosso.jpg"
+    },
+    {
+      "id" : "10000002",
+      "type" : "concert",
+      "genre" : "rock",
+      "name" : "Old but goods ballads",
+      "artists" : "Scorpions",
+      "location" : "New-York",
+      "date" : "2023-03-12",
+      "imageURL" : "https://i.im.ge/2022/09/02/O3kBqa.scorpions.jpg"
+    },
+    {
+      "id" : "10000003",
+      "type" : "show",
+      "genre" : "dance show",
+      "name" : "Irish nights",
+      "artists" : "Dublin folks",
+      "location" : "Los Angeles",
+      "date" : "2023-05-21",
+      "imageURL": "https://i.im.ge/2022/09/02/O3keky.irish-dancers.jpg"
+    }
+  ]
+}

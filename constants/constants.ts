@@ -17,7 +17,6 @@ export const navLinks = [
     header: true,
     footer: true,
   },
-  
   {
     name: 'Contact us',
     url: '/contacts',

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { Container, CustomLink} from "../customElemets/customStyledElements";
 import { navLinks } from "../constants/constants";
 import styled from "styled-components";
@@ -7,33 +8,42 @@ const HeaderWrapper = styled.header`
 	width: 100%;
 	display: flex;
 	justify-content: center;
-  background-color: black;
+  background-color: #783030;
 `;
 
 const HeaderContainer = styled(Container)`
   display: flex;
   width: 100%;
-  padding: 16px;
 `
 const HeaderLogoContainer = styled.div`
   flex: 1;
+  display: flex;
+  align-items: center;
 `
 const HeaderLinksContainer = styled.div`
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
 `
 
 const Header = () => {
   const headerLinks = navLinks.filter(item => item.header)
+  const router = useRouter()
+  let baseURL = `/${router.asPath.split('/')[1]}`
+  console.log(baseURL)
+  
   return (
     <HeaderWrapper>
       <HeaderContainer>
-        <HeaderLogoContainer> Events App </HeaderLogoContainer>
-        <HeaderLinksContainer>
+        <HeaderLogoContainer> 
+          <Link href={'/'}>
+            <CustomLink> Events App </CustomLink>
+          </Link>    
+        </HeaderLogoContainer>
+        <HeaderLinksContainer data-test-id="test_headerLinks">
           {headerLinks.map(item => (
             <Link key={item.name} href={item.url}>
-              <CustomLink> {item.name} </CustomLink>
+              <CustomLink active={baseURL === item.url} isHeaderLink={true}>{item.name}</CustomLink>
             </Link>
           ))}
         </HeaderLinksContainer>
@@ -41,3 +51,5 @@ const Header = () => {
     </HeaderWrapper>
   )
 }
+
+export default Header
