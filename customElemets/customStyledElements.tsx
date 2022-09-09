@@ -40,6 +40,7 @@ export const CustomButton = styled.button`
   background-color: #783030;
   transition: all 700ms;
   box-shadow: 4px 4px 8px rgb(31, 31, 31);
+  cursor: pointer;
   &:hover {
     background-color: rgb(76, 0, 0);
   }

@@ -1,6 +1,6 @@
 {
-  "events" : [
-    {
+  "events" : {
+  "zzbeyeye-55677" :  {
       "id" : "10000001",
       "type" : "concert",
       "genre" : "progressive house",
@@ -10,7 +10,7 @@
       "date" : "2022-10-5",
       "imageURL" : "https://i.im.ge/2022/09/02/O3kGPJ.axwellingrosso.jpg"
     },
-    {
+    "zzbeyeye-55277" : {
       "id" : "10000002",
       "type" : "concert",
       "genre" : "rock",
@@ -20,7 +20,7 @@
       "date" : "2023-03-12",
       "imageURL" : "https://i.im.ge/2022/09/02/O3kBqa.scorpions.jpg"
     },
-    {
+    "zzbeyeye-55671" :{
       "id" : "10000003",
       "type" : "show",
       "genre" : "dance show",
@@ -30,5 +30,5 @@
       "date" : "2023-05-21",
       "imageURL": "https://i.im.ge/2022/09/02/O3keky.irish-dancers.jpg"
     }
-  ]
+  }
 }

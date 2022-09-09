@@ -30,7 +30,6 @@ const Header = () => {
   const headerLinks = navLinks.filter(item => item.header)
   const router = useRouter()
   let baseURL = `/${router.asPath.split('/')[1]}`
-  console.log(baseURL)
   
   return (
     <HeaderWrapper>

@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { PageMainContainer, PageHeading, Container, CustomButton } from "../../customElemets/customStyledElements";
 import EventPreview from "@/components/EventPreview";
-import { API_URL } from "@/config/index";
+import EventModal from "@/components/EventsModal";
 import styled from "styled-components";
 
 
@@ -37,10 +38,16 @@ export interface Ievent {
 }
 
 interface Iprops {
-  events : Ievent[]
+  events : Ievent []
 }
 
-const Events = ({events} : Iprops) => {
+const Events = ({events}: Iprops) => {
+
+  const [open, setOpen] = useState(false)
+  const toggleModalOpen = () => {
+    setOpen(prevState => !prevState)
+  }
+  
   return (
     <PageMainContainer>
       <Container>
@@ -48,7 +55,7 @@ const Events = ({events} : Iprops) => {
           <LeftContainer></LeftContainer>
           <PageHeading> Events </PageHeading>
           <ButtonContainer>
-            <CustomButton> Add event </CustomButton>
+            <CustomButton onClick={toggleModalOpen} data-test-id = 'create-event-btn'>Add event</CustomButton>
           </ButtonContainer>
         </PageHeader>
         <EventsContainer>
@@ -57,15 +64,18 @@ const Events = ({events} : Iprops) => {
         ))}
         </EventsContainer>
       </Container>  
+      {open && <EventModal handleClick={toggleModalOpen}/>}
     </PageMainContainer>
   )
 }
 
 export async function getStaticProps () {
   const res = await fetch (`https://events-app-8215b-default-rtdb.europe-west1.firebasedatabase.app/events.json`)
-  const events = await res.json()
+  let events = await res.json()
+  events = Object.values(events)
   return {
-    props : {events}
+    props : {events},
+    revalidate: 30,
   }
 }
 
